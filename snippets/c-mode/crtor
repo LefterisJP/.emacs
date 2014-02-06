@@ -1,0 +1,14 @@
+# name : C struct Creator
+# key : crtor
+# --
+
+struct ${1:prefix}_${2:name} *$1_$2_create()
+{
+    struct $1_$2 *ret;
+    RF_MALLOC(ret, sizeof(*ret), return NULL);
+    if (!$1_$2_init(ret)) {
+        free(ret);
+        ret = NULL;
+    }
+    return ret;
+}

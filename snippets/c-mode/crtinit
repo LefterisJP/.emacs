@@ -1,0 +1,19 @@
+# name : C struct Creator and Initializer
+# key : crtinit
+# --
+
+bool ${1:prefix}_${2:name}_init(struct $1_$2 *${3:obj})
+{
+    return true;
+}
+
+struct $1_$2 *$1_$2_create()
+{
+    struct $1_$2 *ret;
+    RF_MALLOC(ret, sizeof(*ret), return NULL);
+    if (!$1_$2_init(ret)) {
+        free(ret);
+        ret = NULL;
+    }
+    return ret;
+}

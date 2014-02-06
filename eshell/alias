@@ -1,0 +1,4 @@
+alias scons compile scons $*
+alias make compile make $*
+alias ff find-file $1
+alias fo find-file-other-window $1

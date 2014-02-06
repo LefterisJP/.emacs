@@ -1,0 +1,106 @@
+;;; el-get-start --- My el-get initialization
+;;; Commentary:
+;; Initializes el-get, clones and installs it if it's not present
+;; Then checks all the required packages and updates and installs them
+
+;;; Code:
+(require 'determine-location)
+
+;; if we don't have el-get, install it
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+    (goto-char (point-max))
+    (eval-print-last-sexp)))
+
+;; setup el-get directories
+(setq el-get-user-package-directory "~/.emacs.d/el-get-user/init_files")
+(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+
+;; set extra makeflags for projects that support it
+(setq el-get-parallel-make-args '("-j5"))
+
+(defvar common-packages
+  '(el-get                ; el-get is self hosting
+
+    ; --- elisp improving libraries ---
+    ; nice string manipulation library. https://github.com/magnars/s.el
+    s
+    ; A modern list library for emacs https://github.com/magnars/dash.el
+    dash
+    ; modern API for files and directories in Emacs https://github.com/rejeep/f.el
+    f
+
+    llvm-mode             ; mode for LLVM bitcode
+    android-mode          ; mode for android development
+    anzu                  ; displays current/total matches info in the mode-line in search modes
+    ag                    ; AG (The silver searcher) emacs frontend
+    fill-column-indicator ; for M-x fci marking the 80th line
+    highlight-indentation ; for highlighting indentation
+    highlight-symbol      ; for highlighting and navigating symbols
+    solarized-emacs       ; solarized for emacs
+    slime                 ; Superior Lisp interaction mode for emacs used to edit SBCL in emacs
+    geiser                ; A collection of Emacs modes for Racket
+    company-mode          ; complete anything mode
+    rtags                 ; C/C++ tags Server/client package based on Clang
+    malinka               ; C/C++ project management
+    workgroups2           ; session management
+    markdown-mode         ; a mark-down mode package for emacs
+    rainbow-delimiters
+    org-mode
+    org-present           ; very simple org-mode presentation tool
+    org-reveal            ; making presentations with org and reveal.js
+    org-trello            ; trello integration for org mode
+    flycheck
+    magit
+    expand-region
+    ace-jump-mode
+    sr-speedbar           ; same frame speedbar (testing it out)
+    dockerfile-mode       ; emacs mode for docker files
+    projectile
+    helm-projectile
+    flx
+    gnugo                 ; Play Igo from inside emacs
+    haskell-mode          ; language mode for haskell
+;    solidity-mode
+    cmake-mode
+    go-mode
+    helm-dash            ; documentation browser for emacs
+    web-mode             ; for editing html/css/javascript
+    org2blog             ; for publishing from org-mode to wordpress
+    helm                 ; incremental completion and selection narrowing framework
+    yaml-mode            ; yaml editing mode, I use it a lot for ansible
+    yasnippet            ; code snippets expansion
+    powerline            ; used by smart-mode-line for its theme only
+    smart-mode-line      ; a sexy mode-line for Emacs
+    drag-stuff           ; a mode with which a key + arrow keys can move things around
+    ;; popwin               ; all temporary buffers are shown as deletable popups
+    volatile-highlights  ; a very small package highlighting things that got yanked/deleted e.t.c.
+    git-messenger        ; provides function that popup commit message at current line
+    elisp-slime-nav      ; slime style tag navigation in elisp
+    rust-mode            ; for rust language support
+;    rust-racer           ; a rust tag jumping project
+    multiple-cursors     ; multiple cursors in emacs!
+    ;; some python stuff
+    rope
+    ropemode
+    ropemacs
+;    elpy
+    js2-mode
+    ))
+
+(defvar el-get-packages-list)
+(defvar work-only-packages '(monky protobuf-mode))
+(defvar personal-only-packages '())
+(if *at-work*
+    (setq el-get-packages-list (append common-packages work-only-packages))
+    (setq el-get-packages-list (append common-packages personal-only-packages)))
+
+;; el-get does its magic to make sure all packages are there
+(el-get 'sync el-get-packages-list)
+
+
+(provide 'el-get-start)
+;;; el-get-start ends here
