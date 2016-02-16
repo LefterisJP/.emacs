@@ -29,6 +29,8 @@ el-get/
 elpa/
 # ignore trello org file
 trello/
+# ignore url cache
+url/
 
 # ignore bookmarks
 bookmarks
