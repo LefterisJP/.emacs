@@ -64,7 +64,7 @@
     flx
     gnugo                 ; Play Igo from inside emacs
     haskell-mode          ; language mode for haskell
-;    solidity-mode
+    solidity-mode
     cmake-mode
     go-mode
     helm-dash            ; documentation browser for emacs
