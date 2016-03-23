@@ -52,6 +52,8 @@
 (require 'load-libraries)
 (require 'load-functions)
 (require 'load-settings)
+(require 'lk-avatar)
+(require 'lk-scratch)
 
 (provide 'init)
 ;;; init.el ends here
