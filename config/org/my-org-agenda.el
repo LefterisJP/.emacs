@@ -16,12 +16,13 @@
 ;; these are files (or directories) being searched for agenda information)
 (setq org-agenda-files '("~/org/"
 			 "~/org/calendars"
-                         "~/org/projects"
-                         "~/org/personal"
-                         "~/org/dev_env"
-                         "~/org/projects/wrubelek"
-                         "~/org/projects/malinka"
-                         "~/org/projects/refulang"))
+             "~/org/projects"
+             "~/org/personal"
+             "~/org/dev_env"
+             "~/org/work"
+             ;; "~/org/projects/wrubelek" ;; at least for now I don't want to see tasks from here
+             "~/org/projects/malinka"
+             "~/org/projects/refulang"))
 
 ;; have a diary file
 (setq org-agenda-include-diary nil)

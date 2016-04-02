@@ -7,22 +7,14 @@
 (require 'ido)
 
 (setq org-default-notes-file "~/org/refile.org")
-;; Capture templates for: TODO tasks, Notes, appointments, meetings, and org-protocol
+;; Capture templates for specific type of tasks
 (setq org-capture-templates
-      (quote (("t" "todo" entry (file "~/org/refile.org")
-               "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
-              ("r" "respond" entry (file "~/org/refile.org")
-               "* NEXT Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish t)
-              ("n" "note" entry (file "~/org/refile.org")
-               "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
-              ("j" "Journal" entry (file+datetree "~/org/diary.org")
-               "* %?\n%U\n" :clock-in t :clock-resume t)
-              ("w" "org-protocol" entry (file "~/org/refile.org")
-               "* TODO Review %c\n%U\n" :immediate-finish t)
-              ("m" "Meeting" entry (file "~/org/refile.org")
-               "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
-              ("h" "Habit" entry (file "~/org/refile.org")
-               "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"<%Y-%m-%d %a .+1d/3d>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n"))))
+      (quote (("s" "slock.it Tasks" entry (file+headline  "~/org/work/slockit.org" "General Tasks")
+               "* TODO %?\n%U\n%a\n" :kill-bufer t)
+              ("r" "refulang Tasks" entry (file+headline  "~/org/projects/refulang/refulang.org" "General Tasks")
+               "* TODO %?\n%U\n%a\n" :kill-bufer t)
+              ("p" "personal Tasks" entry (file+headline  "~/org/personal/personal.org" "General Tasks")
+               "* TODO %?\n%U\n%a\n" :kill-bufer t))))
 
 ;; REFILING OPTIONS
 ; Targets include this file and any file contributing to the agenda - up to 9 levels deep

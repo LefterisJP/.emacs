@@ -60,13 +60,13 @@
 (add-hook 'org-src-mode-hook  '(lambda () (highlight-indentation-mode 0)))
 
 ;; ;; these are all my org-mode configurations
-;; (require 'my-org-todo)
-;; (require 'my-org-refile)
-;; (require 'my-org-agenda)
+(require 'my-org-todo)
+(require 'my-org-refile)
+(require 'my-org-agenda)
 ;; (require 'my-org-clock)
-;; (require 'my-org-archive)
+(require 'my-org-archive)
 ;; (require 'my-org-habits)
-;; (require 'my-org-reminders); keep last
+(require 'my-org-reminders); keep last
 
 (provide 'init-org-mode)
 ;;; init-org-mode.el ends here
