@@ -14,15 +14,20 @@
   (f-mkdir "~/org/calendars"))
 
 ;; these are files (or directories) being searched for agenda information)
-(setq org-agenda-files '("~/org/"
-			 "~/org/calendars"
-             "~/org/projects"
-             "~/org/personal"
-             "~/org/dev_env"
-             "~/org/work"
-             ;; "~/org/projects/wrubelek" ;; at least for now I don't want to see tasks from here
-             "~/org/projects/malinka"
-             "~/org/projects/refulang"))
+(setq my-org-agenda-files
+      '("~/org/"
+        "~/org/calendars"
+        "~/org/projects"
+        "~/org/personal"
+        "~/org/dev_env"
+        "~/org/work"
+        ;; "~/org/projects/wrubelek" ;; at least for now I don't want to see tasks from here
+        "~/org/projects/refulang"))
+;; now iterate them and add them to the actual org-agenda-files iff they exist
+(dolist (f my-org-agenda-files)
+  (if (f-exists? f)
+      (add-to-list 'org-agenda-files f)
+    (message "LK/Org warning: Could not find org-agenda file: %s" f)))
 
 ;; have a diary file
 (setq org-agenda-include-diary nil)
