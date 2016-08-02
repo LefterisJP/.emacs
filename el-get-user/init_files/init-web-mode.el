@@ -19,6 +19,9 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 
+;; indentation should be set at 4 spaces
+(setq web-mode-markup-indent-offset 4)
+
 (provide 'init-web-mode)
 ;;; init-web-mode.el ends here
 
