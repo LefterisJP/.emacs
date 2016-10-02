@@ -48,6 +48,8 @@
 ;; (setq debug-on-error t)
 ;; DO NOT prompt in a very large tag file
 (setq large-file-warning-threshold nil)
+;; Define utf8 as an alias for utf-8
+(define-coding-system-alias 'utf8 'utf-8)
 
 ;; disable insert prompting for overwrite mode.
 ;; Move it to control + insert, since I use it really rarely
@@ -60,10 +62,15 @@
   "Set up Emacs font, theme e.t.c."
   ;; Using X Logical font description as described here:
   ;; http://www.gnu.org/software/emacs/manual/html_node/emacs/Fonts.html
+  ;; (if *at-desktop*
+  ;; 	  (set-frame-font "-adobe-Source Code Pro-normal-normal-normal-*-10-*-*-*-m-0-iso10646-1")
+  ;; 	;; else
+  ;;   (set-frame-font "-adobe-Source Code Pro-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1")))
+
   (if *at-desktop*
-	  (set-frame-font "-adobe-Source Code Pro-normal-normal-normal-*-10-*-*-*-m-0-iso10646-1")
-	;; else
-	(set-frame-font "-adobe-Source Code Pro-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1")))
+      (set-frame-font "-PfEd-DejaVu Sans Mono-normal-normal-normal-*-11-*-*-*-m-0-iso10646-1")
+    ;; else
+    (set-frame-font "-PfEd-DejaVu Sans Mono-normal-normal-normal-*-13-*-*-*-m-0-iso10646-1")))
 
 ;; load the look for emacs no matter if it's a client frame or not
 (if (daemonp)

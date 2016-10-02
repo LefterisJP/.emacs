@@ -8,20 +8,20 @@
 (add-hook 'c-mode-common-hook 'malinka-mode)
 
 (malinka-define-project
- :name "refuclib"
- :root-directory "/home/lefteris/w/refu/clib"
- :build-directory "/home/lefteris/w/refu/"
- :configure-cmd "scons -c clib_tests && scons clib_tests"
- :compile-cmd "scons  clib"
- :test-cmd "scons clib_tests")
+ :name "rfbase"
+ :root-directory "/home/lefteris/w/refulang/rfbase"
+ :build-directory "/home/lefteris/w/refulang/rfbase/build"
+ :configure-cmd "cmake .. -DCMAKE_BUILD_TYPE=Debug"
+ :compile-cmd "make -j4"
+ :test-cmd "./test.sh")
 
 (malinka-define-project
- :name "refulang"
- :root-directory "/home/lefteris/w/refu/core"
- :build-directory "/home/lefteris/w/refu/"
- :configure-cmd "scons -c lang_tests && scons lang_tests"
- :compile-cmd "scons refu"
- :test-cmd "scons lang_tests")
+ :name "refu"
+ :root-directory "/home/lefteris/w/refulang/refu"
+ :build-directory "/home/lefteris/w/refulang/refu/build"
+ :configure-cmd "cmake .. -DCMAKE_BUILD_TYPE=Debug -DTEST=1"
+ :compile-cmd "make -j4"
+ :test-cmd "./test.sh")
 
 (malinka-define-project
  :name "libweb3core"
