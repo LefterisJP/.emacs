@@ -1,5 +1,11 @@
+;;; elpy --- My configuration for the elpy package
+;;; Commentary:
+;;; More info here:
+;;; https://github.com/jorgenschaefer/elpy
+
 (require 'elpy)
 (require 'jedi)
+(require 'ropemacs)
 
 (setq elpy-rpc-python-command "python2")
 (setq elpy-modules '(elpy-module-sane-defaults
@@ -28,7 +34,14 @@
 	    (local-set-key (kbd "<H-left>") 'elpy-nav-move-iblock-left)
 	    ;; and put back the right word and left word bindings which they had overriden
 	    (local-set-key (kbd "<M-left>") 'left-word)
-	    (local-set-key (kbd "<M-right>") 'right-word)))
+	    (local-set-key (kbd "<M-right>") 'right-word)
+	    ;; set some ropemacs keybindings
+	    (local-set-key (kbd "C-c f") 'rope-find-occurrences)
+	    (local-set-key (kbd "C-c r d") 'rope-show-doc)
+	    (local-set-key (kbd "C-c r o") 'rope-organize-imports)))
 
 (elpy-enable)
 (setq elpy-rpc-backend "jedi")
+
+(provide 'init-elpy)
+;;; init-elpy.el ends here
