@@ -10,7 +10,7 @@
 (defvar *at-work* nil "True if at the office.")
 (defvar *at-desktop* nil "True if at a desktop computer (so we got a big monitor).")
 
-(when (string-prefix-p "archlenovo" system-name) ;;the work laptop
+(when (string-prefix-p "robaczek" system-name) ;;the work laptop
     (setq *at-work* t))
 (when (string-prefix-p "archdesktop" system-name)
     (setq *at-desktop* t))

@@ -70,7 +70,7 @@
   (if *at-desktop*
       (set-frame-font "-PfEd-DejaVu Sans Mono-normal-normal-normal-*-11-*-*-*-m-0-iso10646-1")
     ;; else
-    (set-frame-font "-PfEd-DejaVu Sans Mono-normal-normal-normal-*-13-*-*-*-m-0-iso10646-1")))
+    (set-frame-font "-PfEd-DejaVu Sans Mono-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1")))
 
 ;; load the look for emacs no matter if it's a client frame or not
 (if (daemonp)
