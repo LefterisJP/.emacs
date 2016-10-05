@@ -87,7 +87,8 @@
     rope
     ropemode
     ropemacs
-;    elpy
+    jedi
+    elpy
     js2-mode
     ))
 

@@ -12,6 +12,7 @@ recentf
 request/
 ido.last
 .emacs_workgroups~
+.python-environments/
 
 #ignore cask
 .cask/
