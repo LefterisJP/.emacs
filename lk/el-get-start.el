@@ -80,6 +80,7 @@
     volatile-highlights  ; a very small package highlighting things that got yanked/deleted e.t.c.
     git-messenger        ; provides function that popup commit message at current line
     elisp-slime-nav      ; slime style tag navigation in elisp
+    elisp-format         ; an elisp formatting tool
     rust-mode            ; for rust language support
 ;    rust-racer           ; a rust tag jumping project
     multiple-cursors     ; multiple cursors in emacs!
