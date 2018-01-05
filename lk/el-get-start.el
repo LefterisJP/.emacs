@@ -74,7 +74,7 @@
     yaml-mode            ; yaml editing mode, I use it a lot for ansible
     yasnippet            ; code snippets expansion
     powerline            ; used by smart-mode-line for its theme only
-    smart-mode-line      ; a sexy mode-line for Emacs
+    spaceline-all-the-icons
     drag-stuff           ; a mode with which a key + arrow keys can move things around
     ;; popwin               ; all temporary buffers are shown as deletable popups
     volatile-highlights  ; a very small package highlighting things that got yanked/deleted e.t.c.
