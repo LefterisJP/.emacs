@@ -136,5 +136,14 @@ With prefix ARG non-nil, echo the result instead"
   (interactive "s")
   (insert (byte-to-string (string-to-number byte))))
 
+
+(defun lk-plus-x% (val perc)
+  "Increase VAL by PERC."
+  (+ val (* val perc)))
+
+(defun lk-minus-x% (val perc)
+  "Decrease VAL by PERC."
+  (- val (* val perc)))
+
 (provide 'load-functions)
 ;;; load-functions.el ends here
