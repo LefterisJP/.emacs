@@ -4,3 +4,4 @@
 (setq solarized-emphasize-indicators nil)
 
 (load-theme 'solarized-dark t)
+;; (load-theme 'solarized-light t)
