@@ -27,6 +27,7 @@
 	  (lambda ()
 	    (setq web-mode-markup-indent-offset 4)
 	    (setq web-mode-css-indent-offset 4)
+	    (set-variable 'indent-tabs-mode nil)
 	    (setq tab-width 4)))
 
 ;; Javascript options
