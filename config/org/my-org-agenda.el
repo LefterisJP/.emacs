@@ -4,25 +4,33 @@
 ;;; Code:
 
 (require 'org-agenda)
+(require 'f)
 
 ;; clone the org mode repository if it's not there
 (unless (f-exists? "~/org/")
-  (call-process-shell-command "cd ~ && git clone ssh://git@lefvps/git/org.git"))
+  (call-process-shell-command "cd ~ && git clone git@bitbucket.org:lefterisjp/org.git"))
 
 ;; create the calendard directory in org if it's not already made
 (unless (f-exists? "~/org/calendars")
   (f-mkdir "~/org/calendars"))
 
-;; these are files (or directories) being searched for agenda information)
-(setq my-org-agenda-files
-      '("~/org/"
-        "~/org/calendars"
-        "~/org/projects"
-        "~/org/personal"
-        "~/org/dev_env"
-        "~/org/work"
-        ;; "~/org/projects/wrubelek" ;; at least for now I don't want to see tasks from here
-        "~/org/projects/refulang"))
+
+(defvar my-org-agenda-files
+  '("~/org/"
+    "~/org/calendars"
+    "~/org/projects"
+    "~/org/personal"
+    "~/org/dev_env"
+    "~/org/work"
+    ;; "~/org/projects/wrubelek" ;; at least for now I don't want to see tasks from here
+    "~/org/projects/refulang"
+    "~/org/projects/raiden"
+    "~/org/projects/rotkehlchen"
+    "~/org/projects/sikorka"
+    )
+  "The files/directories being searched for agenda information."
+  )
+
 ;; now iterate them and add them to the actual org-agenda-files iff they exist
 (dolist (f my-org-agenda-files)
   (if (f-exists? f)
