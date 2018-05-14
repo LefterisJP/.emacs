@@ -10,9 +10,6 @@
 ;; enable flycheck globally
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
-;; for python let's set python2-flake8 as the executable instead
-;; of the default flake8 (python3)
-(setq flycheck-python-flake8-executable "flake8-python2")
 ;; run flycheck at these events
 (setq flycheck-check-syntax-automatically
       '(save idle-change new-line mode-enabled))
