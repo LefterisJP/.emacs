@@ -22,11 +22,6 @@
     "~/org/personal"
     "~/org/dev_env"
     "~/org/work"
-    ;; "~/org/projects/wrubelek" ;; at least for now I don't want to see tasks from here
-    "~/org/projects/refulang"
-    "~/org/projects/raiden"
-    "~/org/projects/rotkehlchen"
-    "~/org/projects/sikorka"
     )
   "The files/directories being searched for agenda information."
   )
