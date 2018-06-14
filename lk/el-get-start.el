@@ -19,6 +19,11 @@
 (setq el-get-user-package-directory "~/.emacs.d/el-get-user/init_files")
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 
+(defun el-get-recompile-packages ()
+  "Recompile all el-get downloaded packages."
+  (interactive)
+  (byte-recompile-directory "/home/lefteris/.emacs.d/el-get/"  nil 'force))
+
 ;; set extra makeflags for projects that support it
 (setq el-get-parallel-make-args '("-j5"))
 
