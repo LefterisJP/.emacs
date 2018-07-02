@@ -99,7 +99,6 @@
     ))
 
 (defvar el-get-packages-list)
-(defvar work-only-packages '(monky protobuf-mode))
 (defvar personal-only-packages '())
 (if *at-work*
     (setq el-get-packages-list (append common-packages work-only-packages))
