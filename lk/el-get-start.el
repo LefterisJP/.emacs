@@ -96,9 +96,11 @@
     jedi
     elpy
     js2-mode
+    py-isort
     ))
 
 (defvar el-get-packages-list)
+(defvar work-only-packages '())
 (defvar personal-only-packages '())
 (if *at-work*
     (setq el-get-packages-list (append common-packages work-only-packages))
