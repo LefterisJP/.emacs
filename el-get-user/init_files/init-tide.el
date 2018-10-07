@@ -16,7 +16,7 @@
   (setq flycheck-check-syntax-automatically '(save mode-enabled))
   (eldoc-mode +1)
   (tide-hl-identifier-mode +1)
-  (add-hook 'before-save-hook 'tslint-fix-file nil 'local)
+  (add-hook 'after-save-hook 'tslint-fix-file nil 'local)
   (setq-default current-indentation-spaces 4)
   (setq indent-tabs-mode nil)
   ;; company is an optional dependency. You have to
