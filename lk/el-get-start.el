@@ -97,6 +97,7 @@
     elpy
     js2-mode
     py-isort
+    tide
     ))
 
 (defvar el-get-packages-list)
