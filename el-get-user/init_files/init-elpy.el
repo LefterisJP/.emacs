@@ -7,7 +7,7 @@
 (require 'jedi)
 (require 'ropemacs)
 
-(setq elpy-rpc-python-command "python2")
+(setq elpy-rpc-python-command "python")
 (setq elpy-modules '(elpy-module-sane-defaults
 		     elpy-module-company
 		     elpy-module-eldoc
