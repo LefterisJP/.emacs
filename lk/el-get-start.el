@@ -50,7 +50,7 @@
     rtags                 ; C/C++ tags Server/client package based on Clang
     malinka               ; C/C++ project management
     markdown-mode         ; a mark-down mode package for emacs
-    rainbow-delimiters
+    rainbow-delimiters    ; highlights delimiters such as parentheses, brackets or braces according to their depth. Each successive level is highlighted in a different color.
     org-mode
     org-present           ; very simple org-mode presentation tool
     org-reveal            ; making presentations with org and reveal.js
@@ -67,7 +67,6 @@
     solidity-mode
     cmake-mode
     go-mode
-    helm-dash            ; documentation browser for emacs
     web-mode             ; for editing html/css/javascript
     org2blog             ; for publishing from org-mode to wordpress
     helm                 ; incremental completion and selection narrowing framework
