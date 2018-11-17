@@ -5,7 +5,6 @@
 
 (require 'elpy)
 (require 'jedi)
-(require 'ropemacs)
 
 (setq elpy-rpc-python-command "python")
 (setq elpy-modules '(elpy-module-sane-defaults
@@ -35,10 +34,7 @@
 	    ;; and put back the right word and left word bindings which they had overriden
 	    (local-set-key (kbd "<M-left>") 'left-word)
 	    (local-set-key (kbd "<M-right>") 'right-word)
-	    ;; set some ropemacs keybindings
-	    (local-set-key (kbd "C-c f") 'rope-find-occurrences)
-	    (local-set-key (kbd "C-c r d") 'rope-show-doc)
-	    (local-set-key (kbd "C-c r o") 'rope-organize-imports)))
+	    ))
 
 (elpy-enable)
 (setq elpy-rpc-backend "jedi")

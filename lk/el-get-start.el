@@ -85,10 +85,6 @@
     rust-mode            ; for rust language support
 ;    rust-racer           ; a rust tag jumping project
     multiple-cursors     ; multiple cursors in emacs!
-    ;; some python stuff
-    rope
-    ropemode
-    ropemacs
     jedi
     elpy
     js2-mode
