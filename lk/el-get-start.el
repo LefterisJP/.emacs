@@ -42,7 +42,6 @@
     android-mode          ; mode for android development
     anzu                  ; displays current/total matches info in the mode-line in search modes
     ag                    ; AG (The silver searcher) emacs frontend
-    fill-column-indicator ; for M-x fci marking the 80th line
     highlight-indentation ; for highlighting indentation
     highlight-symbol      ; for highlighting and navigating symbols
     solarized-emacs       ; solarized for emacs
@@ -57,7 +56,6 @@
     org-mode
     org-present           ; very simple org-mode presentation tool
     org-reveal            ; making presentations with org and reveal.js
-    org-trello            ; trello integration for org mode
     flycheck
     magit
     expand-region
@@ -67,7 +65,6 @@
     projectile
     helm-projectile
     flx
-    gnugo                 ; Play Igo from inside emacs
     haskell-mode          ; language mode for haskell
     solidity-mode
     cmake-mode
