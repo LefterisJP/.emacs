@@ -49,7 +49,6 @@
     company-mode          ; complete anything mode
     rtags                 ; C/C++ tags Server/client package based on Clang
     malinka               ; C/C++ project management
-    workgroups2           ; session management
     markdown-mode         ; a mark-down mode package for emacs
     rainbow-delimiters
     org-mode
