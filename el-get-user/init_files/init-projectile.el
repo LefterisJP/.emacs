@@ -18,7 +18,7 @@
 
 ;; Changing some of the key bindings that were stated here
 ;; https://github.com/bbatsov/projectile#interactive-commands
-
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 ;; choose between ack and ag for "A"
 ;; (define-key projectile-command-map (kbd "A") 'projectile-ack)
 (define-key projectile-command-map (kbd "A") 'projectile-ag)
