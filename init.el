@@ -15,6 +15,9 @@
 (add-to-list 'load-path "~/.emacs.d/el-get/f")
 (add-to-list 'load-path "~/.emacs.d/el-get/s")
 (add-to-list 'load-path "~/.emacs.d/el-get/dash")
+(add-to-list 'load-path "~/.emacs.d/el-get/company-mode/")
+(add-to-list 'load-path "~/.emacs.d/el-get/flycheck/")
+(add-to-list 'load-path "~/.emacs.d/el-get/htmlize/")
 
 
 ;; for some funny reason, cedet/contrib can't be properly added from init-cedet.el
