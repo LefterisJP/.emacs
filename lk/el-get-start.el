@@ -73,9 +73,7 @@
     yaml-mode            ; yaml editing mode, I use it a lot for ansible
     yasnippet            ; code snippets expansion
     smart-mode-line      ; a sexy mode-line for Emacs
-    ;; popwin               ; all temporary buffers are shown as deletable popups
     volatile-highlights  ; a very small package highlighting things that got yanked/deleted e.t.c.
-    git-messenger        ; provides function that popup commit message at current line
     elisp-slime-nav      ; slime style tag navigation in elisp
     elisp-format         ; an elisp formatting tool
     rust-mode            ; for rust language support
