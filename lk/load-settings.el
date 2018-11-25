@@ -7,7 +7,7 @@
 ;;; Code:
 (require 'determine-location)
 
-;; To inhibit flycheck free variable and undefined function warnings
+;; To inhibit free variable and undefined function warnings
 (defvar compilation-scroll-output)
 (defvar linum-format)
 (defvar buffer-face-mode-face)

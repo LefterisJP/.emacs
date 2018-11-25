@@ -8,7 +8,7 @@
 
 ;; Buffers visiting files with same name have unique names
 (require 'uniquify)
-(setq uniquify-buffer-name-style 'reverse)
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
 ;---- WHITESPACE START ----
 (require 'whitespace)
