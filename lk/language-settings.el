@@ -18,6 +18,10 @@
 	    (setq indent-tabs-mode nil)
 	    (setq-default python-indent 4)
 	    (setq tab-width 4)
+	    ;; For python there is a bug that causes emacs to hang with opening
+	    ;; single or double quotes. Check here:
+	    ;; https://github.com/jorgenschaefer/elpy/issues/1381
+	    (setq elpy-eldoc-show-current-function nil)
 	    (setq-default python-guess-indent nil)))
 
 ;; Web mode options
