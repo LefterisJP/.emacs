@@ -26,8 +26,8 @@
 	    ;; override elpy key-bindings
 	    (use-local-map elpy-mode-map)
 	    ;; Redefine the jumping keybindings as I like them
-	    (local-set-key (kbd "M-.") 'jedi:goto-definition)
-	    (local-set-key (kbd "M-,") 'jedi:goto-definition-pop-marker)
+	    (local-set-key (kbd "M-.") 'elpy-goto-definition)
+	    (local-set-key (kbd "M-,") 'pop-tag-mark)
 	    ;; override the move-block commands
 	    (local-set-key (kbd "<H-right>") 'elpy-nav-move-iblock-right)
 	    (local-set-key (kbd "<H-left>") 'elpy-nav-move-iblock-left)
