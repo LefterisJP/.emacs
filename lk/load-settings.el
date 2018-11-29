@@ -36,7 +36,7 @@
 (global-linum-mode t)
  ;; Show column-number in the mode line
 (column-number-mode 1)
- ;; delete seleted text when typing
+ ;; delete selected text when typing
 (delete-selection-mode 1)
  ;; highlight brackets/parentheses e.t.c.
 (show-paren-mode t)
