@@ -84,6 +84,7 @@
     js2-mode
     py-isort
     tide
+    python-black
     ))
 
 (defvar el-get-packages-list)
