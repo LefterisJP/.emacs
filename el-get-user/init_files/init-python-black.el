@@ -9,7 +9,7 @@
 ;; Make sure that if we are in the raiden project we use black before saving
 (add-hook 'python-mode-hook
 	  (lambda ()
-	    (when (string= (projectile-project-name) "raiden")
+	    (when (or (string= (projectile-project-name) "raiden") (string= (projectile-project-name) "shutter"))
 		      (python-black-on-save-mode))))
 
 (provide 'init-python-black)
