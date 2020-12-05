@@ -47,8 +47,8 @@
     solarized-emacs       ; solarized for emacs
     slime                 ; Superior Lisp interaction mode for emacs used to edit SBCL in emacs
     company-mode          ; complete anything mode
-    rtags                 ; C/C++ tags Server/client package based on Clang
-    malinka               ; C/C++ project management
+    ; rtags                 ; C/C++ tags Server/client package based on Clang
+    ; malinka               ; C/C++ project management
     markdown-mode         ; a mark-down mode package for emacs
     rainbow-delimiters    ; highlights delimiters such as parentheses, brackets or braces according to their depth. Each successive level is highlighted in a different color.
     org-mode
@@ -62,13 +62,13 @@
     dockerfile-mode       ; emacs mode for docker files
     projectile
     helm-projectile
-    flx
-    haskell-mode          ; language mode for haskell
+    ; flx
+    ; haskell-mode          ; language mode for haskell
     solidity-mode
     cmake-mode
     go-mode
     web-mode             ; for editing html/css/javascript
-    org2blog             ; for publishing from org-mode to wordpress
+    ; org2blog             ; for publishing from org-mode to wordpress
     helm                 ; incremental completion and selection narrowing framework
     yaml-mode            ; yaml editing mode, I use it a lot for ansible
     yasnippet            ; code snippets expansion
