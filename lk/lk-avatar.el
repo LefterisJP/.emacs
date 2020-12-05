@@ -24,7 +24,7 @@
 (defconst lk-avatar-file (locate-user-emacs-file "lefteris-avatar.png")
   "The path to my avatar.")
 
-(defconst lk-avatar-url "http://lefteris.refu.co/images/profile3.png"
+(defconst lk-avatar-url "https://avatars2.githubusercontent.com/u/1658405?s=460&v=4"
   "The URL of my avatar.")
 
 ;;;###autoload
