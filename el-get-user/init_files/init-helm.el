@@ -34,6 +34,10 @@
       helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
       helm-ff-file-name-history-use-recentf t)
 
+(setq completion-styles `(basic partial-completion emacs22 initials
+                                ,(if (version<= emacs-version "27.0") 'helm-flex 'flex)))
+
+
 ;; helm's version of execute command
 (global-set-key (kbd "M-x") 'helm-M-x)
 

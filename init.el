@@ -30,6 +30,8 @@
 (require 'el-get-start)
 (require 'refu-docs-publishing)
 
+(ido-everywhere -1)
+
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;; el-get packages have
 ;; been loaded by now
