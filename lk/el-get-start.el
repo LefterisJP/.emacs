@@ -39,7 +39,7 @@
     f
 
     llvm-mode             ; mode for LLVM bitcode
-    android-mode          ; mode for android development
+    ;; android-mode          ; mode for android development
     anzu                  ; displays current/total matches info in the mode-line in search modes
     ag                    ; AG (The silver searcher) emacs frontend
     highlight-indentation ; for highlighting indentation
@@ -58,7 +58,7 @@
     magit
     expand-region
     ace-jump-mode
-    sr-speedbar           ; same frame speedbar (testing it out)
+    ;; sr-speedbar           ; same frame speedbar (testing it out)
     dockerfile-mode       ; emacs mode for docker files
     projectile
     helm-projectile
