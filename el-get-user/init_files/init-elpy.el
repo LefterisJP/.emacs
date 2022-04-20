@@ -6,6 +6,7 @@
 (require 'elpy)
 (require 'jedi)
 
+(setq elpy-rpc-ignored-buffer-size 99999999)
 (setq elpy-rpc-python-command "python")
 (setq elpy-modules '(elpy-module-sane-defaults
 		     elpy-module-company
@@ -37,6 +38,7 @@
 	    ))
 
 (elpy-enable)
+(setq elpy-rpc-virtualenv-path 'current)
 (setq elpy-rpc-backend "jedi")
 
 (provide 'init-elpy)
