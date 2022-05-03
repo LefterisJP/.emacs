@@ -114,4 +114,12 @@
 ;; basically do not allow splitting by putting neew window on the bottom
 (setq split-height-threshold nil)
 (provide 'load-settings)
+
+; -- dired options --
+(add-hook 'dired-mode-hook
+	  (lambda ()
+	    (setq-default dired-omit-files-p t) ; this is buffer-local variable
+	    (setq dired-omit-files
+		  (concat dired-omit-files "\\|^\\..+$\\|\\.json$\\|\\.mypy_cache$"))))
+
 ;;; load-settings.el ends here
