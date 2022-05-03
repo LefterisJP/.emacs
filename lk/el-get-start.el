@@ -45,7 +45,6 @@
     highlight-indentation ; for highlighting indentation
     highlight-symbol      ; for highlighting and navigating symbols
     solarized-emacs       ; solarized for emacs
-    slime                 ; Superior Lisp interaction mode for emacs used to edit SBCL in emacs
     company-mode          ; complete anything mode
     ; rtags                 ; C/C++ tags Server/client package based on Clang
     ; malinka               ; C/C++ project management
