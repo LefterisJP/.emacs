@@ -145,5 +145,20 @@ With prefix ARG non-nil, echo the result instead"
   "Decrease VAL by PERC."
   (- val (* val perc)))
 
+(defun json-to-single-line (beg end)
+  "Collapse prettified json in region between BEG and END to a single line
+
+Taken from https://stackoverflow.com/questions/39861580/emacs-program-to-collapse-json-to-single-line
+"
+  (interactive "r")
+  (if (use-region-p)
+      (save-excursion
+        (save-restriction
+          (narrow-to-region beg end)
+          (goto-char (point-min))
+          (while (re-search-forward "[[:space:]\n]+" nil t)
+            (replace-match ""))))
+    (print "This function operates on a region")))
+
 (provide 'load-functions)
 ;;; load-functions.el ends here
