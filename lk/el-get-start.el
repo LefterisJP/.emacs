@@ -85,6 +85,7 @@
     py-isort
     tide
     python-black
+    vlf
     ))
 
 (defvar el-get-packages-list)
