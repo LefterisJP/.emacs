@@ -21,6 +21,10 @@
 		     "--nogroup"
 		     "--column"
 		     "--ignore" "compile_commands.json"
+		     "--ignore" "*.svg"
+		     "--ignore" "*.json"
+		     "--ignore" "*remote_encrypted_db.txt"
+		     "--ignore" "*remote_old_encrypted_db.txt"
 		     "--"))
 (provide 'init-ag)
 ;;; init-ag.el ends here
