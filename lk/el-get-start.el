@@ -38,6 +38,9 @@
     ; modern API for files and directories in Emacs https://github.com/rejeep/f.el
     f
 
+    use-package           ; for easier package config. Should come before all places it's used
+    lsp-mode              ; languge server protocol mode. Should come before all places it's used
+    lsp-ui
     llvm-mode             ; mode for LLVM bitcode
     ;; android-mode          ; mode for android development
     anzu                  ; displays current/total matches info in the mode-line in search modes
@@ -76,7 +79,7 @@
     elisp-slime-nav      ; slime style tag navigation in elisp
     elisp-format         ; an elisp formatting tool
     rust-mode            ; for rust language support
-;    rust-racer           ; a rust tag jumping project
+    rustic               ; built on top of rust-mode
     multiple-cursors     ; multiple cursors in emacs!
     jedi                 ; needed by lsp-python and more
     elpy
@@ -84,7 +87,6 @@
     py-isort
     tide
     vlf
-    lsp-mode
     ))
 
 (defvar el-get-packages-list)

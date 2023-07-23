@@ -60,5 +60,9 @@
 (require 'lk-avatar)
 (require 'lk-scratch)
 
+;; For some reason rust-mode gets always re-added to auto-mode-alist
+;; while we want rustic mode. So delete it here at the very end
+(setq auto-mode-alist (delete '("\\.rs\\'" . rust-mode) auto-mode-alist))
+
 (provide 'init)
 ;;; init.el ends here
