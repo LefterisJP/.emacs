@@ -14,6 +14,7 @@ request/
 ido.last
 .emacs_workgroups~
 .python-environments/
+.lsp*
 
 #ignore cask
 .cask/

@@ -84,6 +84,7 @@
     py-isort
     tide
     vlf
+    lsp-mode
     ))
 
 (defvar el-get-packages-list)
