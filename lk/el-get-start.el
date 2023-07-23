@@ -83,7 +83,6 @@
     js2-mode
     py-isort
     tide
-    python-black
     vlf
     ))
 
