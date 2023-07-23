@@ -78,7 +78,7 @@
     rust-mode            ; for rust language support
 ;    rust-racer           ; a rust tag jumping project
     multiple-cursors     ; multiple cursors in emacs!
-    jedi
+    jedi                 ; needed by lsp-python and more
     elpy
     js2-mode
     py-isort

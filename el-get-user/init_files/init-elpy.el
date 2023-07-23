@@ -9,7 +9,6 @@
 (setq elpy-rpc-ignored-buffer-size 99999999)
 (setq elpy-rpc-python-command "python")
 (setq elpy-modules '(elpy-module-sane-defaults
-		     elpy-module-company
 		     elpy-module-eldoc
 		     elpy-module-highlight-indentation
 		     elpy-module-pyvenv
