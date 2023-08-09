@@ -32,8 +32,8 @@
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
- ;;display line numbers
-(global-linum-mode t)
+ ;;display line numbers in programming modes
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
  ;; Show column-number in the mode line
 (column-number-mode 1)
  ;; delete selected text when typing
