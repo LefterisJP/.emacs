@@ -6,31 +6,15 @@
 ;; https://robert.kra.hn/posts/rust-emacs-setup/
 ;;
 ;;; Code:
-(require 'use-package)
 (require 'rust-mode)
 (require 'rustic)
+(require 'lsp-mode)
+(require 'lsp-rust)
+(require 'flycheck)
+(require 'bind-key)  ;; needed for bind-keys
 
-(use-package rustic
-  :ensure
-  :mode  ("\\.rs\\'" . rustic-mode)
-  :bind (:map rustic-mode-map
-              ("M-j" . lsp-ui-imenu)
-              ("M-?" . lsp-find-references)
-              ("C-c C-c l" . flycheck-list-errors)
-              ("C-c C-c a" . lsp-execute-code-action)
-              ("C-c C-c r" . lsp-rename)
-              ("C-c C-c q" . lsp-workspace-restart)
-              ("C-c C-c Q" . lsp-workspace-shutdown)
-              ("C-c C-c s" . lsp-rust-analyzer-status))
-  :config
-  ;; uncomment for less flashiness
-  ;; (setq lsp-eldoc-hook nil)
-  ;; (setq lsp-enable-symbol-highlighting nil)
-  ;; (setq lsp-signature-auto-activate nil)
-
-  ;; comment to disable rustfmt on save
-  (setq rustic-format-on-save t)
-  (add-hook 'rustic-mode-hook 'rk/rustic-mode-hook))
+(setq rustic-format-on-save t)
+(add-hook 'rustic-mode-hook 'rk/rustic-mode-hook)
 
 (defun rk/rustic-mode-hook ()
   ;; so that run C-c C-c C-r works without having to confirm, but don't try to
@@ -39,6 +23,25 @@
   ;; no longer be necessary.
   (when buffer-file-name
     (setq-local buffer-save-without-query t))
+
+  ;; set key map
+  (local-set-key (kbd "M-.") 'elpy-goto-definition)
+  (local-set-key (kbd "M-.") 'lsp-find-definition)
+  (local-set-key (kbd "M-,") 'pop-tag-mark)
+  (local-set-key (kbd "M-,") 'xref-go-back)
+  (local-set-key (kbd "M-j") 'lsp-ui-imenu)
+
+  (bind-keys* :prefix-map custom-rustic-map
+              :prefix lsp-prefix1-value
+              ;; :prefix "C-c C-c"
+              ("l" . flycheck-list-errors)
+              ("a" . lsp-execute-code-action)
+              ("r" . lsp-rename)
+              ("q" . lsp-workspace-restart)
+              ("Q" . lsp-workspace-shutdown)
+              ("s" . lsp-rust-analyzer-status)
+              ("?" . lsp-find-references))
+
   (add-hook 'before-save-hook 'lsp-format-buffer nil t))
 
 (provide 'init-rustic)

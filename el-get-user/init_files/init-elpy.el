@@ -14,15 +14,15 @@
 		     elpy-module-pyvenv
 		     elpy-module-yasnippet))
 
-
 ;; python mode hook to deal with elpy configurations
 (add-hook 'python-mode-hook
 	  (lambda ()
-	    ;; Undefine jedi and elpy jumping keybindings
+	    ;; Undefine some jedi and elpy jumping keybindings
 	    (define-key jedi-mode-map (kbd "C-c .") nil)
 	    (define-key jedi-mode-map (kbd "C-c ,") nil)
 	    (define-key elpy-mode-map (kbd "M-.") nil)
 	    (define-key elpy-mode-map (kbd "M-,") nil)
+	    (define-key elpy-mode-map (kbd "C-c C-c") nil)
 	    ;; override elpy key-bindings
 	    (use-local-map elpy-mode-map)
 	    ;; Redefine the jumping keybindings as I like them

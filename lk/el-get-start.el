@@ -37,10 +37,12 @@
     dash
     ; modern API for files and directories in Emacs https://github.com/rejeep/f.el
     f
-
-    use-package           ; for easier package config. Should come before all places it's used
-    lsp-mode              ; languge server protocol mode. Should come before all places it's used
+    use-package           ; only use it for bind-key
+    jedi                  ; needed by lsp-python and more
+    elpy
     lsp-ui
+    lsp-mode              ; languge server protocol mode. Should come before all places it's used
+    lsp-pyright           ; lsp-mode client leveraging Pyright language server
     llvm-mode             ; mode for LLVM bitcode
     ;; android-mode          ; mode for android development
     anzu                  ; displays current/total matches info in the mode-line in search modes
@@ -81,8 +83,6 @@
     rust-mode            ; for rust language support
     rustic               ; built on top of rust-mode
     multiple-cursors     ; multiple cursors in emacs!
-    jedi                 ; needed by lsp-python and more
-    elpy
     js2-mode
     py-isort
     tide
