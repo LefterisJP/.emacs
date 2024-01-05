@@ -20,9 +20,11 @@
 		     "--smart-case"
 		     "--nogroup"
 		     "--column"
+		     "--hidden"
 		     "--ignore" "compile_commands.json"
 		     "--ignore" "*.svg"
 		     "--ignore" "*.json"
+		     "--ignore" "*.csv"
 		     "--ignore" "*remote_encrypted_db.txt"
 		     "--ignore" "*remote_old_encrypted_db.txt"
 		     "--"))
