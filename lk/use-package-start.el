@@ -3,6 +3,8 @@
   (add-to-list 'load-path "home/lefteris/.emacs.d/elpa/use-package-2.4.5.")
   (require 'use-package))
 
+(use-package f :ensure t)
+
 (use-package anzu
   :ensure t
   :config

@@ -1,6 +1,5 @@
 ;;
 ;; ace jump mode major function
-x
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
 ;;
