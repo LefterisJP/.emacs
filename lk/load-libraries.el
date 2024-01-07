@@ -1,6 +1,6 @@
-;;; Libraries --- Libraries I need, not managed by el-get
+;;; Libraries --- Libraries I need, not managed by use-package
 ;;; Commentary:
-;; All of Emacs standard libraries, not manages by el-get
+;; All of Emacs standard libraries, not manages by use-package
 ;; that I need for my setup
 ;;
 

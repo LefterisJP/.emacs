@@ -16,6 +16,7 @@ ido.last
 .emacs_workgroups~
 .python-environments/
 .lsp*
+# ignore tree-sitter .so files
 tree-sitter/
 
 #ignore cask
@@ -28,8 +29,6 @@ url/cookies
 *.elc
 *.el~
 
-# ignore everything managed by el-get
-el-get/
 # ignore elpa packages
 elpa/
 # ignore trello org file

@@ -19,20 +19,7 @@
 ;; load-paths we need to add in the beginning
 (add-to-list 'load-path "~/.emacs.d/lk")
 (add-to-list 'load-path "~/.emacs.d/utils/")
-;; (add-to-list 'load-path "~/.emacs.d/el-get/el-get/")
 (add-to-list 'load-path "~/.emacs.d/config/org")
-
-;; ;; for some funny reason these are not added to the path ... find out why and delete from here
-;; (add-to-list 'load-path "~/.emacs.d/el-get/f")
-;; (add-to-list 'load-path "~/.emacs.d/el-get/s")
-;; (add-to-list 'load-path "~/.emacs.d/el-get/dash")
-;; (add-to-list 'load-path "~/.emacs.d/el-get/company-mode/")
-;; (add-to-list 'load-path "~/.emacs.d/el-get/flycheck/")
-;; (add-to-list 'load-path "~/.emacs.d/el-get/htmlize/")
-
-
-;; ;; for some funny reason, cedet/contrib can't be properly added from init-cedet.el
-;; (add-to-list 'load-path "~/.emacs.d/el-get/cedet/contrib/")
 
 ;; Loads erc configuration
 (add-to-list 'load-path "~/.emacs.d/config/erc/")
@@ -43,13 +30,12 @@
 
 (ido-everywhere -1)
 
-;;;;;;;;;;;;;;;;;;;;;;;
-;; el-get packages have
-;; been loaded by now
-;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; packages should have been loaded by now
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; also make sure the flycheck syntax checker is aware of
-;; any load-path customization (which happens thanks to el-get among others)
+;; any load-path customization
 ;; refer to: https://github.com/flycheck/flycheck/issues/174
 (setq-default flycheck-emacs-lisp-load-path load-path)
 (require 'language-settings)
@@ -66,3 +52,20 @@
 
 (provide 'init)
 ;;; init.el ends here
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(anzu-deactivate-region t)
+ '(anzu-mode-lighter "")
+ '(anzu-replace-to-string-separator " => ")
+ '(anzu-search-threshold 1000)
+ '(package-selected-packages
+   '(tree-sitter-langs tree-sitter tide py-isort js2-mode rustic rust-mode elisp-format elisp-slime-nav volatile-highlights smart-mode-line web-mode helm-projectile projectile helm dockerfile-mode magit flycheck solarized-theme rainbow-delimiters lsp-pyright highlight-symbol expand-region elpy company-jedi anzu ag ace-jump-mode)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
