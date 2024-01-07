@@ -8,6 +8,9 @@
 (require 'tide)
 (require 'company)
 
+;; (setq tide-tsserver-process-environment '("TSS_LOG=-level verbose -file /tmp/tss.log")) ;; for debug log
+(setq tide-tsserver-executable "/usr/local/bin/tsserver") ;; this is needed for me as bundled with package does not work
+
 (defun setup-tide-mode ()
   "Setup the tide mode."
   (interactive)
@@ -32,4 +35,4 @@
   (shell-command (concat "tslint --fix " (buffer-file-name)))
   (revert-buffer t t))
 
-(add-hook 'typescript-mode-hook #'setup-tide-mode)
+(add-hook 'typescript-ts-mode-hook #'setup-tide-mode)

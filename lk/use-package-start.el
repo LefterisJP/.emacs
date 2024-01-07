@@ -146,8 +146,16 @@
   :config
   (load "/home/lefteris/.emacs.d/config/py-isort.el"))
 
+(use-package tree-sitter :ensure t)  ; typescript only works with tree-sitter
+(use-package tree-sitter-langs ; typescript only works with tree-sitter
+  :after (tree-sitter)
+  :ensure t
+  :config
+  (load "/home/lefteris/.emacs.d/config/tree-sitter.el"))
 (use-package tide
   :ensure t
+  :after (company flycheck)
+  :hook ((typescript-ts-mode . tide-setup))
   :config
   (load "/home/lefteris/.emacs.d/config/tide.el"))
 

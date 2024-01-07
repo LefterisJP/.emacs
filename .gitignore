@@ -16,6 +16,7 @@ ido.last
 .emacs_workgroups~
 .python-environments/
 .lsp*
+tree-sitter/
 
 #ignore cask
 .cask/
