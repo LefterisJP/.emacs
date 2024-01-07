@@ -21,6 +21,7 @@
 		     "--nogroup"
 		     "--column"
 		     "--hidden"
+		     "--ignore" ".git/"
 		     "--ignore" "compile_commands.json"
 		     "--ignore" "*.svg"
 		     "--ignore" "*.json"
