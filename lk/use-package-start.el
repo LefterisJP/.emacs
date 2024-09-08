@@ -141,17 +141,16 @@
   :config
   (load "/home/lefteris/.emacs.d/config/js2-mode.el"))
 
-(use-package py-isort
+(use-package gptel
   :ensure t
   :config
-  (load "/home/lefteris/.emacs.d/config/py-isort.el"))
+  (load "/home/lefteris/.emacs.d/config/gptel.el"))
 
-(use-package tree-sitter :ensure t)  ; typescript only works with tree-sitter
-(use-package tree-sitter-langs ; typescript only works with tree-sitter
-  :after (tree-sitter)
+
+(use-package lazy-ruff
   :ensure t
   :config
-  (load "/home/lefteris/.emacs.d/config/tree-sitter.el"))
+  (load "/home/lefteris/.emacs.d/config/lazy-ruff.el"))
 (use-package tide
   :ensure t
   :after (company flycheck)

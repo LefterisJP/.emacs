@@ -39,4 +39,3 @@
 (elpy-enable)
 (setq elpy-rpc-virtualenv-path 'current)
 (setq elpy-rpc-backend "jedi")
-
