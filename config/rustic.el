@@ -8,11 +8,13 @@
 ;;; Code:
 (require 'rust-mode)
 (require 'rustic)
+(require 'rustic-rustfmt)
 (require 'lsp-mode)
 (require 'lsp-rust)
 (require 'flycheck)
 (require 'bind-key)  ;; needed for bind-keys
 
+(setq rustic-rustfmt-config-alist '((edition . "2021")))
 (setq rustic-format-on-save t)
 (add-hook 'rustic-mode-hook 'rk/rustic-mode-hook)
 
