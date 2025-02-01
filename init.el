@@ -62,7 +62,7 @@
  '(anzu-replace-to-string-separator " => ")
  '(anzu-search-threshold 1000)
  '(package-selected-packages
-   '(tree-sitter-langs tree-sitter tide js2-mode rustic rust-mode elisp-format elisp-slime-nav volatile-highlights smart-mode-line web-mode helm-projectile projectile helm dockerfile-mode magit flycheck solarized-theme rainbow-delimiters lsp-pyright highlight-symbol expand-region elpy company-jedi anzu ag ace-jump-mode)))
+   '(gptel tree-sitter-langs tree-sitter tide js2-mode rustic rust-mode elisp-format elisp-slime-nav volatile-highlights smart-mode-line web-mode helm-projectile projectile helm dockerfile-mode magit flycheck solarized-theme rainbow-delimiters lsp-pyright highlight-symbol expand-region elpy company-jedi anzu ag ace-jump-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
