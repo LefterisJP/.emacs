@@ -8,6 +8,10 @@
 ;; Emacs package manager START
 ;; http://www.emacswiki.org/emacs/ELPA
 (require 'package)
+
+;; uncomment that to see backtrace when debugging
+;; (setq debug-on-error t)
+
 (setq package-archives
       '(
         ("melpa" . "https://melpa.org/packages/")
