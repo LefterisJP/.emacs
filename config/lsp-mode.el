@@ -8,7 +8,6 @@
 ;;; Code:
 (require 'lsp-mode)
 (require 'lsp-rust)
-(require 'elpy)  ;; needed for the python hook
 
 ;; rust options
 ;; what to use when checking on-save. "check" is default, I prefer clippy
@@ -38,16 +37,21 @@
 (defvar lsp-prefix1-value "C-c C-c")
 (define-prefix-command 'lsp-prefix1-map)
 (global-set-key (kbd lsp-prefix1-value) 'lsp-prefix1-map)
-(setq lsp-keymap-prefix "C-C C-C")
+(setq lsp-keymap-prefix "C-c C-C")
 
 ;; Start lsp when you open a file for each language
 (add-hook 'python-mode-hook #'lsp)
 (add-hook 'rust-mode-hook #'lsp)
-(add-hook 'lsp-mode-hook 'lsp-ui-mode)
 
 ;; python mode hook to deal with lsp-mode configurations
 (add-hook 'python-mode-hook
 	  (lambda ()
+	    ;; the two commented out lines below are (maybe) needed to make jumping work on rotkiscripts
+	    ;; not sure why/how but with pyright jedi is not caught and stuff don't work.
+	    ;; But this means lsp references and other don't work when this is done. So should deactivate for normal work
+	    ;; (setq lsp-pyright-server-command "jedi-language-server")
+	    ;; (setq lsp-disabled-clients '(pyright))
+
 	    ;; (local-set-key (kbd "M-.") 'elpy-goto-definition)
 	    (local-set-key (kbd "M-.") 'lsp-find-definition)
 	    ;; (local-set-key (kbd "M-,") 'pop-tag-mark)
