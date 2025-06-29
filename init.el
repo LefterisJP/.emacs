@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t -*-
 ;;; Init --- My emacs init file
 ;;; Commentary:
 ;; Everything starts from here
@@ -66,7 +67,12 @@
  '(anzu-replace-to-string-separator " => ")
  '(anzu-search-threshold 1000)
  '(package-selected-packages
-   '(gptel tree-sitter-langs tree-sitter tide js2-mode rustic rust-mode elisp-format elisp-slime-nav volatile-highlights smart-mode-line web-mode helm-projectile projectile helm dockerfile-mode magit flycheck solarized-theme rainbow-delimiters lsp-pyright highlight-symbol expand-region elpy company-jedi anzu ag ace-jump-mode)))
+   '(ace-jump-mode ag anzu company-jedi dockerfile-mode elisp-format
+		   elisp-slime-nav elpy expand-region gptel
+		   helm-projectile highlight-symbol js2-mode lazy-ruff
+		   lsp-pyright magit rainbow-delimiters rustic
+		   smart-mode-line solarized-theme tide
+		   tree-sitter-langs volatile-highlights web-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

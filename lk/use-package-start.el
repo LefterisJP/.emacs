@@ -35,10 +35,10 @@
   :mode ("README\\.,d\\'" . gfm-mode)
   :init (setq markdown-command "multimarkdown"))
 
-(use-package rainbow-delimiters
-  :ensure t
-  :hook (c-mode-common . 'rainbow-delimiters-mode)
-  :hook (python-mode . 'rainbow-delimiters-mode))
+;; (use-package rainbow-delimiters
+;;   :ensure t
+;;   :hook (c-mode-common . 'rainbow-delimiters-mode)
+;;   :hook (python-mode . 'rainbow-delimiters-mode))
 
 (use-package org
   :ensure t
@@ -50,22 +50,30 @@
   :config
   (add-hook 'after-init-hook 'global-company-mode))
 
-(use-package company-jedi
-  :ensure t
-  :config
-  (add-hook 'python-mode-hook 'company-jedi))
+;; (use-package company-jedi
+;;   :ensure t
+;;   :config
+;;   :hook (python-mode . (lambda () 
+;;                          (add-to-list 'company-backends 'company-jedi))))
+  ;; (add-hook 'python-mode-hook 'company-jedi))
 
-(use-package elpy
-  :after (company-jedi)
-  :ensure t
-  :config
-  (load "/home/lefteris/.emacs.d/config/elpy.el"))
+;; (use-package elpy
+;;   :after (company-jedi)
+;;   :ensure t
+;;   :config
+;;   (load "/home/lefteris/.emacs.d/config/elpy.el"))
 
 (use-package lsp-mode
-  :after (elpy)  ;; needed for the python hook
+  ;; :after (elpy)  ;; needed for the python hook
   :ensure t
   :config
   (load "/home/lefteris/.emacs.d/config/lsp-mode.el"))
+
+;; (use-package lsp-ui
+;;   :ensure t
+;;   :after (lsp-mode)
+;;   :config
+;;   (load "/home/lefteris/.emacs.d/config/lsp-ui-mode.el"))
 
 (use-package lsp-pyright
   :after (lsp-mode)
@@ -151,6 +159,14 @@
   :ensure t
   :config
   (load "/home/lefteris/.emacs.d/config/lazy-ruff.el"))
+
+;; Temporarily commented out as it segfaulted emacs at rotki
+;; (use-package tree-sitter :ensure t)  ; typescript only works with tree-sitter
+;; (use-package tree-sitter-langs ; typescript only works with tree-sitter
+;;   :after (tree-sitter)
+;;   :ensure t
+;;   :config
+;;   (load "/home/lefteris/.emacs.d/config/tree-sitter.el"))
 (use-package tide
   :ensure t
   :after (company flycheck)
