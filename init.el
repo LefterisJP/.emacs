@@ -6,6 +6,13 @@
 
 ;;; Code:
 
+;;; Shutup emacs 31.1 lexical bindings warnings
+(setq warning-suppress-log-types
+      (cons '(files missing-lexbind-cookie)
+            (if (boundp 'warning-suppress-log-types)
+                warning-suppress-log-types
+              nil)))
+
 ;; Emacs package manager START
 ;; http://www.emacswiki.org/emacs/ELPA
 (require 'package)

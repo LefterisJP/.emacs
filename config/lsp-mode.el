@@ -20,13 +20,17 @@
 (setq lsp-rust-analyzer-display-parameter-hints nil)
 (setq lsp-rust-analyzer-display-reborrow-hints nil)
 
-;; general options
-(setq lsp-eldoc-render-all t)
-(setq lsp-idle-delay 0.6)
-;; enable / disable the hints as you prefer:
+;; general options - optimized for performance
+(setq lsp-eldoc-render-all nil)  ; Reduced for performance
+(setq lsp-idle-delay 0.3)        ; Faster response
 (setq lsp-inlay-hint-enable t)
-;; Show warning if files to watch are more than. Can also disable with nil
-(setq lsp-file-watch-threshold 990000)
+;; Reduce file watching for better performance
+(setq lsp-file-watch-threshold 2000)
+;; Performance optimizations
+(setq lsp-completion-provider :none)  ; Use company-capf instead
+(setq lsp-headerline-breadcrumb-enable nil)  ; Disable breadcrumbs for performance
+(setq lsp-modeline-code-actions-enable nil)  ; Disable modeline actions for performance
+(setq lsp-signature-auto-activate nil)       ; Reduce signature popup frequency
 
 ;; uncomment for less flashiness
 ;; (setq lsp-eldoc-hook nil)
@@ -43,22 +47,46 @@
 (add-hook 'python-mode-hook #'lsp)
 (add-hook 'rust-mode-hook #'lsp)
 
-;; python mode hook to deal with lsp-mode configurations
+;; ============================================================================
+;; Python-specific LSP configuration
+;; ============================================================================
+
+;; Pyright global settings
+(setq lsp-pyright-multi-root nil)              ; Disable multi-root for performance
+(setq lsp-pyright-auto-import-completions t)   ; Enable auto-import completions
+(setq lsp-pyright-auto-search-paths t)         ; Auto-detect Python paths
+
+;; Python mode hook - streamlined for LSP-only setup
 (add-hook 'python-mode-hook
 	  (lambda ()
-	    ;; the two commented out lines below are (maybe) needed to make jumping work on rotkiscripts
-	    ;; not sure why/how but with pyright jedi is not caught and stuff don't work.
-	    ;; But this means lsp references and other don't work when this is done. So should deactivate for normal work
-	    ;; (setq lsp-pyright-server-command "jedi-language-server")
-	    ;; (setq lsp-disabled-clients '(pyright))
-
-	    ;; (local-set-key (kbd "M-.") 'elpy-goto-definition)
+	    ;; Pyright language service settings
+	    (setq lsp-pyright-disable-language-service nil)
+	    (setq lsp-pyright-disable-organize-imports nil)
+	    
+	    ;; Local LSP optimizations for Python
+	    (setq-local lsp-enable-file-watchers nil)       ; Disable for large Python projects
+	    (setq-local lsp-enable-folding nil)             ; Disable folding for performance
+	    (setq-local lsp-enable-symbol-highlighting t)   ; Keep symbol highlighting
+	    (setq-local lsp-enable-links nil)               ; Disable clickable links for performance
+	    
+	    ;; Company completion optimizations
+	    (setq-local company-backends '((company-capf company-dabbrev-code)))
+	    (setq-local company-minimum-prefix-length 2)
+	    (setq-local company-idle-delay 0.2)
+	    (setq-local company-tooltip-align-annotations t)
+	    
+	    ;; Navigation keybindings
 	    (local-set-key (kbd "M-.") 'lsp-find-definition)
-	    ;; (local-set-key (kbd "M-,") 'pop-tag-mark)
 	    (local-set-key (kbd "M-,") 'xref-go-back)
 	    (local-set-key (kbd "M-j") 'lsp-ui-imenu)
+	    (local-set-key (kbd "C-c M-.") 'lsp-find-implementation)
+	    (local-set-key (kbd "C-c M-?") 'lsp-find-references)
+	    
+	    ;; LSP command prefix bindings
 	    (define-key 'lsp-prefix1-map (kbd "l") 'flycheck-list-errors)
 	    (define-key 'lsp-prefix1-map (kbd "a") 'lsp-execute-code-action)
 	    (define-key 'lsp-prefix1-map (kbd "r") 'lsp-rename)
 	    (define-key 'lsp-prefix1-map (kbd "?") 'lsp-find-references)
+	    (define-key 'lsp-prefix1-map (kbd "i") 'lsp-find-implementation)
+	    (define-key 'lsp-prefix1-map (kbd "t") 'lsp-find-type-definition)
 	    ))
